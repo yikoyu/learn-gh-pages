@@ -1,0 +1,35 @@
+name: Example Page
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'src/**'
+      - 'examples/**'
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: ./.github/actions/build-setup
+
+      - name: Build Project
+        run: pnpm build
+
+      - name: 部署到 GH-Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
+          single-commit: true
+          target-folder: ${{ github.ref_name }}
+          clean: true
+          commit-message: "chore(gh-pages): deploy ${{ github.ref_name }} branch @ ${{ github.sha }}"
