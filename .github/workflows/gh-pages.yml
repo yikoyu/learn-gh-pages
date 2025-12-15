@@ -12,6 +12,9 @@ jobs:
   ci:
     runs-on: ${{ matrix.os }}
 
+    permissions:
+      contents: write
+
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -32,4 +35,4 @@ jobs:
           single-commit: true
           target-folder: ${{ github.ref_name }}
           clean: true
-          commit-message: "chore(gh-pages): deploy ${{ github.ref_name }} branch @ ${{ github.sha }}"
+          commit-message: 'chore(gh-pages): deploy ${{ github.ref_name }} branch @ ${{ github.sha }}'

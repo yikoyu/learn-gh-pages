@@ -1,0 +1,12 @@
+name: autofix.ci
+
+on: [pull_request]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ./.github/actions/autofix.yml
+        with:
+          command: pnpm lint:fix
