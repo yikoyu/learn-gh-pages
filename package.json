@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "private": true,
   "packageManager": "pnpm@10.25.0",
+  "engines": {
+    "node": "v22"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
