@@ -1,12 +1,18 @@
 name: autofix.ci
 
-on: [pull_request]
+on:
+  push: 
+    branches: [main, develop]
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
 
 jobs:
   ci:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: ./.github/actions/autofix.yml
-        with:
-          command: pnpm lint:fix
+      - name: Autofix
+        uses: yikoyu/workflows/.github/workflows/autofix.yml@main

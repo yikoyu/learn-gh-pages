@@ -1,0 +1,22 @@
+name: Github Pages deploy
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'src/**'
+      - 'examples/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: [ubuntu-latest]
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Commitlint
+        uses: yikoyu/workflows/.github/workflows/github-pages-deploy.yml@main
+        with:
+          target-folder: ${{ github.ref_name }}
