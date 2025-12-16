@@ -9,8 +9,4 @@ on:
 
 jobs:
   commitlint:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Commitlint
-        uses: yikoyu/workflows/.github/workflows/commitlint.yml@main
+    uses: yikoyu/workflows/.github/workflows/commitlint.yml@main

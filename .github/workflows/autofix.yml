@@ -10,9 +10,5 @@ on:
       - synchronize
 
 jobs:
-  ci:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Autofix
-        uses: yikoyu/workflows/.github/workflows/autofix.yml@main
+  autofix:
+    uses: yikoyu/workflows/.github/workflows/autofix.yml@main
