@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 
-const msg = ref('Vite + Vue + 123');
+const msg = ref('Vite + Vue + 123')
 </script>
 
 <template>
