@@ -22,6 +22,7 @@
     "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/tsconfig": "^0.8.1",
+    "@yikoyu/commitlint-config": "^0.2.3",
     "eslint": "^9.39.2",
     "eslint-plugin-format": "^1.1.0",
     "typescript": "~5.9.3",
